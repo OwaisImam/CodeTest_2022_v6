@@ -1,45 +1,21 @@
-Do at least ONE of the following tasks: refactor is mandatory. Write tests is optional, will be good bonus to see it. 
-Please do not invest more than 2-4 hours on this.
-Upload your results to a Github repo, for easier sharing and reviewing.
+Code refactored
 
-Thank you and good luck!
+1- I simply used the request class gloablly, because It is using all over the controller, so the better way to do that just initialize the request in the construct and use it from that variable all over the controller.
 
+2- The variable for the repository should be repositoryName + Repository, e.g: bookingRepository this way of variable initializing will give the better understanding of the repository.
 
+3- Remove unused variables
 
-Code to refactor
-=================
-1) app/Http/Controllers/BookingController.php
-2) app/Repository/BookingRepository.php
+4- better way of getting all data from request except _token and submit button value, is $request->except(['_token', 'submit'])
 
-Code to write tests (optional)
-=====================
-3) App/Helpers/TeHelper.php method willExpireAt
-4) App/Repository/UserRepository.php, method createOrUpdate
+5- Create test for createorUpdate User.
 
 
-----------------------------
+X- The code is written in good format or indentation but the unused variables and code make the code terrible,
+I strongly prefer that is somthing is not using then there is no need to write it. 
+Because compiler reads each line and the unused line of code make the response slower.
+so Its my suggestion to avoid writing unused line of code.
 
-What I expect in your repo:
-
-X. A readme with:   Your thoughts about the code. What makes it amazing code. Or what makes it ok code. Or what makes it terrible code. How would you have done it. Thoughts on formatting, structure, logic.. The more details that you can provide about the code (what's terrible about it or/and what is good about it) the easier for us to assess your coding style, mentality etc
-
-And 
-
-Y.  Refactor it if you feel it needs refactoring. The more love you put into it. The easier for us to asses your thoughts, code principles etc
-
-
-IMPORTANT: Make two commits. First commit with original code. Second with your refactor so we can easily trace changes. 
-
-
-NB: you do not need to set up the code on local and make the web app run. It will not run as its not a complete web app. This is purely to assess you thoughts about code, formatting, logic etc
-
-
-===== So expected output is a GitHub link with either =====
-
-1. Readme described above (point X above) + refactored code 
-OR
-2. Readme described above (point X above) + refactored core + a unit test of the code that we have sent
-
-Thank you!
-
-
+The good part is that each function has the its return data type. 
+This is my SOP that each function should have defined their return type, so the new developer or colluege get to know 
+what will he expect from that function.
